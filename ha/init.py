@@ -117,7 +117,7 @@ def create_model(arch: str, compile: bool = True):
             vocab_size = int(vocab_size)
             model = nn.ModuleDict({
                 'encoder': create_model(encoder_arch, compile=False),
-                'recognizer': Recognizer(feat_dim=1024, vocab_size=vocab_size),
+                'recognizer': Recognizer(feat_dim=1536, vocab_size=vocab_size),
             })
         case ['transducer', encoder_arch, decoder_arch, vocab_size]:
             vocab_size = int(vocab_size)
