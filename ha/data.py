@@ -10,7 +10,7 @@ def make_frames(wav, op='fbank'):
         frames = torchaudio.compliance.kaldi.mfcc(wav)
 
         # utterance-level CMVN
-        frames -= frames.mean(dim=0)
+        # frames -= frames.mean(dim=0)
         frames /= frames.std(dim=0)
     elif op == 'fbank':
         frames = torchaudio.compliance.kaldi.fbank(wav, num_mel_bins=80)
